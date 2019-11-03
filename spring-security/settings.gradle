@@ -1,0 +1,11 @@
+rootProject.name = 'spring-security'
+include 'security-app'
+include 'security-browser'
+include 'security-core'
+include 'security-demo'
+include 'sso-client1'
+include 'sso-client2'
+include 'sso-demo'
+include 'sso-server'
+include 'security-authorize'
+

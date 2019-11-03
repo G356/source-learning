@@ -1,0 +1,78 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        maven { url 'https://repo.spring.io/libs-snapshot' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'cn.mrcode.imooc.springsecurity'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = 1.8
+}
+
+
+subprojects {
+    buildscript {
+        ext {
+            springBootVersion = '2.0.4.RELEASE'
+        }
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        }
+    }
+
+    apply plugin: 'org.springframework.boot'
+
+
+    repositories {
+        // 增加n多数据源，加快下载速度
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        maven { url 'https://repo.spring.io/libs-snapshot' }
+        maven { url "https://maven.repository.redhat.com/ga/" }
+        maven { url "http://maven.nuiton.org/nexus/content/groups/releases/" }
+        maven { url "https://repository.cloudera.com/artifactory/cloudera-repos/" }
+        mavenCentral()
+    }
+
+
+    ext {
+        springCloudVersion = 'Finchley.SR1'
+    }
+
+    dependencies {
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+
+    dependencyManagement {
+        // 这个可能是一个补充还是第三方的依赖版本管理，在配置core的时候会用到这个配置
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Cairo-SR3'
+        }
+        // 管理spring大部分配置的依赖版本
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    //这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。
+    // 解决依赖模块项目打包失败的问题
+    jar {
+        enabled = true
+    }
+}
