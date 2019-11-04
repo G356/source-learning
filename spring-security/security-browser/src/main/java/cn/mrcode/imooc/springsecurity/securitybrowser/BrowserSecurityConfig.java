@@ -1,5 +1,4 @@
 package cn.mrcode.imooc.springsecurity.securitybrowser;
-
 import cn.mrcode.imooc.springsecurity.securitycore.authentication.AbstractChannelSecurityConfig;
 import cn.mrcode.imooc.springsecurity.securitycore.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import cn.mrcode.imooc.springsecurity.securitycore.authorize.AuthorizeConfigManager;
@@ -10,7 +9,6 @@ import cn.mrcode.imooc.springsecurity.securitycore.validate.code.ValidateCodeSec
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
@@ -20,6 +18,7 @@ import org.springframework.security.web.session.InvalidSessionStrategy;
 import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 import org.springframework.social.security.SpringSocialConfigurer;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 /**
@@ -40,7 +39,7 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
     @Autowired
     private PersistentTokenRepository persistentTokenRepository;
     // 之前已经写好的 MyUserDetailsService
-    @Autowired
+    @Resource
     private UserDetailsService userDetailsService;
 
     // 由下面的  .apply(smsCodeAuthenticationSecurityConfigs)方法添加这个配置
