@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+  </head>
+<body>
+<h2>page list</h2>
+<a href="/user/common">common page</a>
+<br/>
+<a href="/admin/common">admin page</a>
+<br/>
+<form method="post" th:action="@{/logout}">
+  <input class="btn btn-primary" type="submit" value="注销"/>
+</form>
+</body>
+</html>
