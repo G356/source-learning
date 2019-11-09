@@ -6,3 +6,8 @@
 
 - [csdn 配套笔记](https://blog.csdn.net/mr_zhuqiang/article/details/81502354)
 - [GitHUb 配套笔记](https://github.com/zq99299/essay-note/blob/master/chapter/imooc/spring_security/index.md)
+
+#Spring Boot Security
+- [Spring Boot Security]
+1.https://zhuanlan.zhihu.com/p/62444596
+2.https://github.com/gf-huanchupk/SpringBootLearning
