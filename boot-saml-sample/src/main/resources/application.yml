@@ -1,0 +1,18 @@
+logging.level.org.springframework.security.saml: DEBUG
+logging.level.org.opensaml: DEBUG
+#  file: logs/file.log
+server:
+  #https端口号.
+  port: 5000
+  ssl:
+    enabled: true
+    #证书别名
+    key-alias: apollo
+    #秘钥库类型
+    key-store-type: JKS
+    #证书的路径.
+    key-store: classpath:saml/samlKeystore.jks
+    #证书密码，请修改为您自己证书的密码.
+    key-store-password: nalle123
+    protocol: TLS
+

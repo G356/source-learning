@@ -18,6 +18,7 @@ package com.vdenotaris.boot.saml.core;
 
 import com.vdenotaris.boot.saml.CommonTestSupport;
 import com.vdenotaris.boot.saml.TestConfig;
+import com.vdenotaris.boot.saml.service.SAMLUserDetailsServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.opensaml.saml2.core.NameID;

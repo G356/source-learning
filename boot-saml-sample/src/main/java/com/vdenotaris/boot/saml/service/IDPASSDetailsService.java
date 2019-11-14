@@ -1,4 +1,4 @@
-package com.vdenotaris.boot.saml.config;
+package com.vdenotaris.boot.saml.service;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

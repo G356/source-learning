@@ -17,8 +17,9 @@
 package com.vdenotaris.boot.saml.core;
 
 import com.vdenotaris.boot.saml.CommonTestSupport;
-import com.vdenotaris.boot.saml.stereotypes.CurrentUser;
+import com.vdenotaris.boot.saml.service.annotation.CurrentUser;
 import com.vdenotaris.boot.saml.TestConfig;
+import com.vdenotaris.boot.saml.service.annotation.CurrentUserHandlerMethodArgumentResolver;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

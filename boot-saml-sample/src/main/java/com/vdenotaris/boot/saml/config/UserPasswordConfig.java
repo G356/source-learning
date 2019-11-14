@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class UserPasswordConfig {
   @Autowired
-  IDPASSDetailsService IDPASSDetailsService;
+  com.vdenotaris.boot.saml.service.IDPASSDetailsService IDPASSDetailsService;
   @Bean
   public DaoAuthenticationProvider usernamePasswordProvider() {
     DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
